@@ -2,23 +2,25 @@ package com.sss.sharicmaric.bean;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-
 /**
  * Created by netcrk on 1/2/15.
  */
-@Entity
+
 public class Person {
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    private String  id;
     private String name;
 
-    public Long getId() {
+    public Person(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
