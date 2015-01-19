@@ -3,16 +3,14 @@ package com.sss.sharicmaric.bean;
 import org.springframework.data.annotation.Id;
 
 /**
- * Created by netcrk on 1/2/15.
+ * Created by svystunov on 1/9/2015.
  */
-
-public class Person {
+public class Position {
     @Id
-    private String  id;
+    private String id;
     private String name;
 
-
-    public Person( String name) {
+    public Position(String name) {
         this.name = name;
     }
 

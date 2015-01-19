@@ -2,17 +2,19 @@ package com.sss.sharicmaric.bean;
 
 import org.springframework.data.annotation.Id;
 
-/**
- * Created by netcrk on 1/2/15.
- */
+import java.util.List;
 
-public class Person {
+/**
+ * Created by svystunov on 1/9/2015.
+ */
+public class Project {
     @Id
-    private String  id;
+    private String id;
     private String name;
 
+    private List<Position> positions;
 
-    public Person( String name) {
+    public Project(String name) {
         this.name = name;
     }
 
@@ -30,5 +32,13 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<Position> positions) {
+        this.positions = positions;
     }
 }
