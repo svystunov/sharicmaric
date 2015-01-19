@@ -11,7 +11,6 @@ public class Project {
     @Id
     private String id;
     private String name;
-
     private List<Position> positions;
 
     public Project(String name) {
@@ -40,5 +39,14 @@ public class Project {
 
     public void setPositions(List<Position> positions) {
         this.positions = positions;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", positions=" + positions +
+                '}';
     }
 }

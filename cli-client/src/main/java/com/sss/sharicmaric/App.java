@@ -1,5 +1,6 @@
 package com.sss.sharicmaric;
 
+import com.sss.sharicmaric.bean.Assignment;
 import com.sss.sharicmaric.bean.Person;
 import com.sss.sharicmaric.bean.Position;
 import com.sss.sharicmaric.bean.Project;
@@ -12,7 +13,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.Instant;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,12 +47,17 @@ public class App implements CommandLineRunner {
         personList = personRepository.findByName("asd");
         System.out.println("personList.size() = " + personList.size());
 
-        projectRepository.deleteAll();
+//        projectRepository.deleteAll();
         Project project = new Project("pr1");
-        project.setPositions(Arrays.asList(new Position("poz1"), new Position("poz2")));
-        projectRepository.save(project);
+        Position poz1 = new Position("poz1");
+        poz1.setAssignments(Arrays.asList(new Assignment(Date.from(Instant.now()),Date.from(Instant.now()) )));
+        project.setPositions(Arrays.asList(poz1, new Position("poz2")));
+//        projectRepository.save(project);
+        System.out.println("project = " + project);
 
-
+        List<Project> pr1 = projectRepository.findByName("pr1");
+        Project project1 = pr1.get(0);
+        System.out.println("project1 = " + project1);
 
     }
 }

@@ -2,24 +2,26 @@ package com.sss.sharicmaric.bean;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 /**
  * Created by svystunov on 1/9/2015.
  */
 public class Position {
-    @Id
-    private String id;
     private String name;
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "name='" + name + '\'' +
+                ", assignments=" + assignments +
+                '}';
+    }
+
+    private List<Assignment> assignments;
 
     public Position(String name) {
         this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -29,4 +31,13 @@ public class Position {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Assignment> getAssignments() {
+        return assignments;
+    }
+
+    public void setAssignments(List<Assignment> assignments) {
+        this.assignments = assignments;
+    }
+
 }
